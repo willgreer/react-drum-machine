@@ -1,0 +1,111 @@
+@import "./normalize";
+
+
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;300&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --displayColor: rgba(222, 234, 231, 0.25);
+  --drumMachineColor: rgb(48, 48, 48);
+  --backgroundColor: rgb(63, 63, 63);
+  --mainFontColor: #0d0d0e;
+  --subFontColor: rgba(255, 251, 251, 0.5);
+
+  --headerFont: 'VT323', monospace;
+  --drumPadFont: 'MuseoModerno', cursive;
+  --displayFont: 'Space Mono', monospace;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  height: 100vh;
+  font-family: var(--displayFont);
+}
+
+.header {
+  font-family: var(--headerFont);
+  font-size: 1.2rem;
+  color: var(--mainFontColor);
+  margin-bottom: 0.8rem;
+  padding-left: 0.6rem;
+}
+
+#drum-machine {
+  background: var(--drumMachineColor);
+  color: var(--subFontColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 16px 16px 16px -12px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 16px 16px 16px -12px rgba(0, 0, 0, 0.78);
+  box-shadow: 16px 16px 16px -12px rgba(0, 0, 0, 0.78);
+
+  #display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 360px;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    margin: 2rem 2rem 0;
+    padding: 1rem;
+    background-color: var(--displayColor);
+    color: var(--fontColor);
+  }
+
+  #drum-pad--container {
+    font-family: var(--drumPadFont);
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin: 1.4rem;
+    max-width: 100%;
+
+
+    .drum-pad {
+      border: 1px solid var(--subFontColor);
+      width: 11vh;
+      height: 11vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1vw;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+
+
+      &:hover,
+      &:focus {
+        border: 1px solid var(--mainFontColor);
+        background-color: var(--subFontColor);
+        color: var(--mainFontColor);
+        opacity: 0.2;
+      }
+
+      &:active {
+        border: 1px solid var(--subFontColor);
+        -moz-box-shadow: inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow: inset 0 0 10px #000000;
+      }
+
+    }
+  }
+}
